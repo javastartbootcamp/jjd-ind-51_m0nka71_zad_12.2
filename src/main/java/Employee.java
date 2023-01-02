@@ -1,11 +1,11 @@
 public class Employee {
     private String firstName;
     private String lastName;
-    private int pesel;
+    private String pesel;
     private String department;
-    private int salary;
+    private double salary;
 
-    public Employee(String firstName, String lastName, int pesel, String department, int salary) {
+    public Employee(String firstName, String lastName, String pesel, String department, double salary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.pesel = pesel;
@@ -29,11 +29,11 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public int getPesel() {
+    public String getPesel() {
         return pesel;
     }
 
-    public void setPesel(int pesel) {
+    public void setPesel(String pesel) {
         this.pesel = pesel;
     }
 
@@ -45,11 +45,11 @@ public class Employee {
         this.department = department;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 }

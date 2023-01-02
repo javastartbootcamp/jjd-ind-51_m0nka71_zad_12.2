@@ -20,9 +20,9 @@ public class EmployeeDataReader {
         String[] data = fileLine.split(";");
         String firstName = data[0];
         String lastName = data[1];
-        int pesel = Integer.parseInt(data[2]);
+        String pesel = data[2];
         String department = data[3];
-        int salary = Integer.parseInt(data[4]);
+        double salary = Double.parseDouble(data[4]);
         return new Employee(firstName, lastName, pesel, department, salary);
     }
 

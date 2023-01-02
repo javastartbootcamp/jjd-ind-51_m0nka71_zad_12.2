@@ -1,19 +1,17 @@
 public class EmployeeStatistics {
 
     static double getAverageSalary(Employee[] employees) {
-        double averageSalary = 0;
+        double sum = 0;
         int employeeCounter = 0;
         for (Employee employee : employees) {
-            averageSalary += employee.getSalary();
+            sum += employee.getSalary();
             employeeCounter++;
         }
-        double avgSalary = averageSalary / employeeCounter;
-        System.out.println("Średnia wypłata: " + avgSalary);
-        return avgSalary;
+        return sum / employeeCounter;
     }
 
     public static double getLowestSalary(Employee[] employees) {
-        double lowestSalary = 0;
+        double lowestSalary = employees[0].getSalary();
         for (Employee employee : employees) {
             if (employee.getSalary() < lowestSalary) {
                 lowestSalary = employee.getSalary();
@@ -23,25 +21,39 @@ public class EmployeeStatistics {
     }
 
     public static double getHighestSalary(Employee[] employees) {
-        double highestSalary = 0;
+        double highestSalary = employees[0].getSalary();
         for (Employee employee : employees) {
-            if (employee.getSalary() < highestSalary) {
+            if (employee.getSalary() > highestSalary) {
                 highestSalary = employee.getSalary();
             }
         }
         return highestSalary;
     }
 
-    public static int getNumberOfEmployeesInDepartment(Employee[] employees) {
+    public static int getNumberOfEmployeesInItDepartment(Employee[] employees) {
         int employeeCounter = 0;
         for (Employee employee : employees) {
             if (employee.getDepartment().equals("IT")) {
                 employeeCounter++;
             }
-            if (employee.getDepartment().equals("Support")) {
+        }
+        return employeeCounter;
+    }
+
+    public static int getNumberOfEmployeesInManagementDepartment(Employee[] employees) {
+        int employeeCounter = 0;
+        for (Employee employee : employees) {
+            if (employee.getDepartment().equals("Management")) {
                 employeeCounter++;
             }
-            if (employee.getDepartment().equals("Management")) {
+        }
+        return employeeCounter;
+    }
+
+    public static int getNumberOfEmployeesInSupportDepartment(Employee[] employees) {
+        int employeeCounter = 0;
+        for (Employee employee : employees) {
+            if (employee.getDepartment().equals("Support")) {
                 employeeCounter++;
             }
         }
